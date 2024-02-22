@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Menu</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <h2>Menu Items</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Food Name</th>
+                <th>Description</th>
+                <!-- <th>Type</th> -->
+                <th>Offer</th>
+                <th>Price</th>
+                <th>Rating</th>
+                <th>Action</th> 
+            </tr>
+        </thead>
+        <tbody>
+            <% items.forEach(item => { %>
+                <tr>
+                    <td><%= item.food_name %></td>
+                    <td><%= item.food_desc %></td>
+                    <!-- <td><%= item.food_type %></td> -->
+                    <td><%= item.food_offer %></td>
+                    <td><%= item.food_price %></td>
+                    <td><%= item.food_rating %></td>
+                    <td>
+                        <!-- <form method="DELETE" action="http://localhost:3002/v1/order/delete/<%= item._id %>">
+                            <button type="submit">Delete</button>
+                        </form> -->
+
+                        <form id="deleteForm_<%= item._id %>" onsubmit="deleteItem('<%= item._id %>'); return false;">
+                            <button type="submit">Delete</button>
+                        </form>
+                        
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+<script>
+    function deleteItem(itemId) {
+        fetch(`http://localhost:3002/v1/order/delete/${itemId}`, {
+            method: 'DELETE',
+        })
+        .then(response => {
+            if (response.ok) {
+                document.getElementById(`deleteForm_${itemId}`).closest('tr').remove();
+            } else {
+                console.error('Failed to delete item');
+            }
+        })
+        .catch(error => {
+            console.error('Error during delete request:', error);
+        });
+    }
+</script>
+</html>

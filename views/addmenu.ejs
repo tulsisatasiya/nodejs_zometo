@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Menu</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+    body {
+      background-image: url("https://www.apptunix.com/blog/wp-content/uploads/sites/3/2018/12/On-demand-food-delivery-app-1.jpg");
+      height: 100vh;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .wrapper {
+      position: relative;
+      max-width: 430px;
+      width: 100%;
+      background: rgba(241, 232, 234, 0.9);
+      padding: 34px;
+      border-radius: 6px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .wrapper h2 {
+      position: relative;
+      font-size: 22px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .wrapper h2::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 0;
+      border-radius: 50px;
+      background: #1b2625;
+      transition: 0.5s;
+    }
+
+    .wrapper h2:hover::before {
+      width: 113px;
+    }
+
+    .wrapper form {
+      margin-top: 30px;
+    }
+
+    .input-box {
+      margin-bottom: 20px;
+    }
+
+    .input-box label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .input-box input {
+      height: 40px;
+      width: 100%;
+      outline: none;
+      padding: 0 15px;
+      font-size: 16px;
+      font-weight: 400;
+      color: #333;
+      border: 1.5px solid #748991;
+      border-bottom-width: 2.5px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .input-box input:focus,
+    .input-box input:valid {
+      border-color: #1b2625;
+    }
+
+  
+
+    /* .primary-button {
+      background-color: #2980b9;
+      height: 40px;
+      width: 200px;
+      margin-top: 30px;
+
+   
+    } */
+
+   
+    .divdata{
+      display: flex;
+    }
+    .divdata a{
+    margin-left: 40%;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="divdata">
+      <h2>Add Menu</h2><a href="showenu" class="primary-button">show items</a>
+    </div>
+   
+
+    <form action="http://localhost:3002/v1/item/add" method="post">
+      <div class="input-box">
+        <label for="food_name">Food Name:</label>
+        <input type="text" id="food_name" name="food_name" required>
+      </div>
+
+      <div class="input-box">
+        <label for="food_desc">Food Description:</label>
+        <input type="text" id="food_desc" name="food_desc" required>
+      </div>
+
+      <div class="input-box">
+        <label for="food_type">Food Type:</label>
+        <input type="text" id="food_type" name="food_type">
+      </div>
+
+      <div class="input-box">
+        <label for="food_offer">Food Offer:</label>
+        <input type="text" id="food_offer" name="food_offer" required>
+      </div>
+
+      <div class="input-box">
+        <label for="food_price">Food Price:</label>
+        <input type="text" id="food_price" name="food_price" required>
+      </div>
+
+      <div class="input-box">
+        <label for="food_rating">Food Rating:</label>
+        <input type="number" id="food_rating" name="food_rating" required>
+      </div>
+
+      <div class="input-box button">
+        <input type="submit" value="Add Item" class="primary-button">
+      </div>
+    </form>
+  </div>
+</body>
+<script>
+ 
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // Serialize form data
+      const formData = new FormData(form);
+
+      // Use AJAX to submit the form data
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+          // Optionally, you can redirect or perform other actions on success
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+  });
+</script>
+
+</script>
+</html>

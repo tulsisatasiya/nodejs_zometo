@@ -1,0 +1,297 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Sign up</title>
+</head>
+ <style>
+    /* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("https://www.boomlive.in/h-upload/2021/07/23/953470-zomato.webp");
+            /* width: 100%; */
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Navigation bar styles */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+
+
+
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.white-btn {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Form box styles */
+.form-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+    height: auto;
+    border-radius: 10%;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.3); /* Black background with transparency */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.5); /* Border color */
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1), 0 1px 3px rgba(255, 255, 255, 0.2); /* Adjust shadow colors */
+}
+
+
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.top span {
+    color: #fff;
+    font-size: small;
+    padding: 10px 0;
+}
+
+header {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0 30px 0;
+}
+
+.two-forms {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-box {
+    position: relative;
+}
+
+.input-field {
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    height: 40px;
+   
+    padding: 0 10px 0 50px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.input-field:hover,
+.input-field:focus {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+.submit {
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    height: 45px;
+    width: 50%;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    margin-top: 10px;
+}
+
+.submit:hover {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
+.two-col {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: small;
+    margin-top: 10px;
+}
+
+.two-col .one {
+    display: flex;
+    gap: 5px;
+}
+/* ... (your existing styles) ... */
+
+.input-box select {
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    height: 40px;
+    width: 100%;
+    padding: 0 10px 0 50px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    margin-bottom: 10px;
+
+    /* Additional styles for select */
+    color: rgba(0, 0, 0, 0.5); /* Background color */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Border color */
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1), 0 1px 3px rgba(255, 255, 255, 0.2); /* Adjust shadow colors */
+}
+/* 
+.input-box select:hover,
+.input-box select:focus {
+    background: rgba(255, 255, 255, 0.25);
+} */
+
+
+/* Add more styles as needed */
+
+ </style>
+<body>
+ <div class="wrapper">
+    <nav class="nav">
+        <!-- <div class="nav-logo">
+            <p><img src="./1000_F_164130835_6uZrZXvW3fYEsfBIHOhRKeeA9bi6i8zf-removebg-preview.png" alt="" width="200px"></p>
+        </div> -->
+        <div class="nav-menu" id="navMenu">
+        </div>
+        <!-- <div class="nav-button">
+            <a href="login" class="nav-button"><button class="btn white-btn">Log in</button></a>
+            
+            <a href="signup" class="nav-button"><button class="btn" >Sign Up</button></a>
+            
+        </div> -->
+        <!-- <div class="nav-menu-btn">
+            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+        </div> -->
+    </nav>
+<!----------------------------- Form box ----------------------------------->    
+    <div class="form-box">
+        <!------------------- login form -------------------------->
+      
+        <!------------------- registration form -------------------------->
+        <div class="register-container" id="register">
+            <div class="top">
+                <span>Have an account? <a href="login" onclick="login()">Login</a></span>
+                <header>Sign Up</header>
+            </div>
+            <form action="/v1/user/register" method="post" onsubmit="showAlert()">
+            <div class="two-forms">
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Firstname" name="firstName">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Lastname" name="lastName">
+                    <i class="bx bx-user"></i>
+                </div>
+            </div>
+           
+            <div class="input-box">
+                <input type="text" class="input-field" placeholder="Contact Number" name="contactNumber">
+                <i class="bx bx-phone"></i>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" placeholder="Address" name="full_address">
+                <i class="bx bx-current-location"></i>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" placeholder="Email" name="email">
+                <i class="bx bx-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input type="number" class="input-field" placeholder="age" name="age">
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" placeholder="Password" name="password">
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <select class="input-field" name="role">
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <i class="bx bx-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="submit" class="submit" value="Register">
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="register-check">
+                    <label for="register-check"> Remember Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Terms & conditions</a></label>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+<script>
+   
+   function myMenuFunction() {
+    var i = document.getElementById("navMenu");
+    if(i.className === "nav-menu") {
+        i.className += " responsive";
+    } else {
+        i.className = "nav-menu";
+    }
+   }
+
+   function showAlert() {
+        alert("Registration completed!");
+    }
+ 
+</script>
+<script>
+</script>
+</body>
+</html>
