@@ -1,7 +1,5 @@
 const { CategoryService } = require("../services");
 
-
-
 // Create a new category
 const addCategory = async (req, res) => {
   try {
@@ -12,7 +10,6 @@ const addCategory = async (req, res) => {
     if (categoryExist) {
       throw new Error("categoryExist already exists");
     }
-
 
 
     const category = await CategoryService.addCategory(body);
